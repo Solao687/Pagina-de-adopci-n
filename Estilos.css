@@ -1,1 +1,115 @@
-s
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    max-width: 1100px;
+    height: 85vh;
+    margin: 20px auto;
+    border: 3px solid #000000;
+    
+    grid-template-columns: 25% 75%;
+    
+    grid-template-rows: auto 1fr auto;
+    
+    grid-template-areas: 
+        "header header"
+        "nav content"
+        "footer footer";
+}
+
+
+.header {
+    grid-area: header;
+    background-color: #e63973;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 3px solid #000000;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #b5b382;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid #000000;
+}
+
+.content {
+    grid-area: content;
+    background-color: #e6af87;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #71a497;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-top: 3px solid #000000;
+}
+
+
+.content-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content-body {
+    display: flex;
+    gap: 20px;
+}
+
+.content-box {
+    width: 160px;
+    height: 160px;
+    border: 3px solid #000000;
+    flex-shrink: 0;
+}
+
+.text-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.line {
+    height: 4px;
+    background-color: #000000;
+    width: 100%;
+}
+
+.full-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
