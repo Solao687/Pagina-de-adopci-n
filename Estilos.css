@@ -14,7 +14,7 @@ html, body {
 
 #layout-principal {
     display: grid;
-    width: 80%;
+    width: 60%;
     height: 100vh;
     margin: 0 auto;
     border-left: 4px solid #000000;
