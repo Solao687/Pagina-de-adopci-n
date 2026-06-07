@@ -1,4 +1,4 @@
-/* 1. Reset completo y fondo negro para los laterales extremos */
+/* 1. Reset completo y fondo negro para toda la página */
 * {
     margin: 0;
     padding: 0;
@@ -8,96 +8,90 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #000000; /* Laterales totalmente negros */
+    background-color: #000000; /* Fondo totalmente negro para los laterales */
     overflow-x: hidden;       
 }
 
-/* 2. El layout ahora tiene fondo Coral, bordes finos blancos y el estilo de la imagen */
+/* 2. Contenedor: Reducido al 60% de ancho y centrado */
 #layout-principal {
     display: grid;
-    width: 60%;                /* Mantiene tu ancho reducido al 60% */
-    height: 100vh;             /* Ocupa todo el alto de la pantalla */
-    margin: 0 auto;            /* Centra el contenedor principal */
-    background-color: #FF7F50; /* Color Coral base para todo el diseño */
-    padding: 30px;             /* Margen interno para que se vea el fondo coral alrededor */
+    width: 60%;    /* Reducido para que ocupe el 60% del ancho total */
+    height: 100vh; /* Sigue ocupando todo el alto de la pantalla de borde a borde */
+    margin: 0 auto; /* Centra el diseño en medio de la pantalla */
+    border-left: 4px solid #000000;
+    border-right: 4px solid #000000;
     
-    /* Espaciado (separación) entre los bloques, simulando la imagen */
-    gap: 15px; 
-    
-    /* Columnas: Nav (25%) y Contenido Central (75%) */
+    /* Columnas: El menú lateral ocupa el 25% y el contenido el 75% del bloque */
     grid-template-columns: 25% 75%;
     
-    /* Filas: Header (fijo/auto) y el resto del espacio para el centro */
-    grid-template-rows: auto 1fr;
+    /* Filas: Header y Footer automáticos, el centro se estira */
+    grid-template-rows: auto 1fr auto;
     
-    /* Reorganización de áreas (sin footer según el nuevo estilo) */
+    /* Mapa visual del diseño */
     grid-template-areas: 
         "header header"
-        "aside main";
+        "aside main"
+        "footer footer";
 }
 
-/* 3. Estilos generales para todos los bloques (Efecto caja transparente con borde blanco) */
+/* 3. Estilos generales para todos los bloques */
 .bloque {
-    border: 1px solid rgba(255, 255, 255, 0.8); /* Borde blanco muy fino */
-    border-radius: 4px;                         /* Esquinas ligeramente suavizadas */
-    color: #ffffff;                             /* Texto blanco como la imagen */
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    color: #000000;
+    padding: 25px;
 }
 
-/* 4. Distribución de las secciones individuales */
+/* 4. Asignación de áreas, colores y bordes internos */
 
 .top-superior {
     grid-area: header;
-    font-size: 1.5rem;
+    background-color: #e63973; /* Rosa / Fucsia */
+    font-size: 2.2rem;
     font-weight: bold;
-    text-transform: uppercase;
     text-align: center;
-    letter-spacing: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-bottom: 4px solid #000000;
 }
 
 .top-izquierdo {
     grid-area: aside;
-    display: flex;
-    flex-direction: column;
+    background-color: #b5b382; /* Verde Oliva / Pardo */
+    border-right: 4px solid #000000;
 }
 
 .top-central {
     grid-area: main;
-    font-size: 1.2rem;
-}
-
-/* Desactivamos el footer para que encaje con la imagen de referencia */
-.top-interior {
-    display: none; 
-}
-
-/* 5. Estilos de la lista de enlaces adaptados al color blanco */
-.texto-lateral {
+    background-color: #e6af87; /* Naranja claro / Arena */
     font-size: 1.3rem;
+}
+
+.top-interior {
+    grid-area: footer;
+    background-color: #71a497; /* Verde azulado / Jade */
+    font-weight: bold;
+    text-align: center;
+    border-top: 4px solid #000000;
+}
+
+/* 5. Estilos para los textos y enlaces dentro del Nav (Aside) */
+.texto-lateral {
+    font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .lista-links {
     list-style: none; 
     display: flex;
     flex-direction: column;
-    gap: 15px;        
+    gap: 12px;        
 }
 
 .lista-links a {
-    color: #ffffff; /* Enlaces en blanco */
+    color: #000000;
     text-decoration: none; 
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .lista-links a:hover {
     text-decoration: underline; 
-    color: #f0f0f0;
 }
