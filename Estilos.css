@@ -1,52 +1,103 @@
+/* 1. Reset completo y fondo negro para los laterales extremos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Laterales totalmente negros */
+    overflow-x: hidden;       
+}
+
+/* 2. El layout ahora tiene fondo Coral, bordes finos blancos y el estilo de la imagen */
 #layout-principal {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  grid-template-rows: 60px 1fr 60px;
-  height: 98vh;
-  gap: 10px;
-  padding: 10px;
-  background-color: white;
-
-  width: 40%;        
-  margin: 0 auto;
+    display: grid;
+    width: 60%;                /* Mantiene tu ancho reducido al 60% */
+    height: 100vh;             /* Ocupa todo el alto de la pantalla */
+    margin: 0 auto;            /* Centra el contenedor principal */
+    background-color: #FF7F50; /* Color Coral base para todo el diseño */
+    padding: 30px;             /* Margen interno para que se vea el fondo coral alrededor */
+    
+    /* Espaciado (separación) entre los bloques, simulando la imagen */
+    gap: 15px; 
+    
+    /* Columnas: Nav (25%) y Contenido Central (75%) */
+    grid-template-columns: 25% 75%;
+    
+    /* Filas: Header (fijo/auto) y el resto del espacio para el centro */
+    grid-template-rows: auto 1fr;
+    
+    /* Reorganización de áreas (sin footer según el nuevo estilo) */
+    grid-template-areas: 
+        "header header"
+        "aside main";
 }
 
+/* 3. Estilos generales para todos los bloques (Efecto caja transparente con borde blanco) */
 .bloque {
-  background-color: #a0c8ff;
-  border: 1px solid #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  box-shadow: 2px 2px 0px #888;
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Borde blanco muy fino */
+    border-radius: 4px;                         /* Esquinas ligeramente suavizadas */
+    color: #ffffff;                             /* Texto blanco como la imagen */
+    font-family: Arial, sans-serif;
+    padding: 20px;
 }
+
+/* 4. Distribución de las secciones individuales */
 
 .top-superior {
-  grid-column: 1 / 3;
+    grid-area: header;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .top-izquierdo {
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-  padding: 15px;
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
 }
 
 .top-central {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  background-color: #c0e0f0;
-  
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 20px;
+    grid-area: main;
+    font-size: 1.2rem;
 }
 
+/* Desactivamos el footer para que encaje con la imagen de referencia */
 .top-interior {
-  grid-column: 1 / 3;
+    display: none; 
+}
+
+/* 5. Estilos de la lista de enlaces adaptados al color blanco */
+.texto-lateral {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lista-links {
+    list-style: none; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;        
+}
+
+.lista-links a {
+    color: #ffffff; /* Enlaces en blanco */
+    text-decoration: none; 
+    font-size: 1.1rem;
+}
+
+.lista-links a:hover {
+    text-decoration: underline; 
+    color: #f0f0f0;
 }
