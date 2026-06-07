@@ -1,4 +1,3 @@
-/* 1. Reset completo y fondo negro para toda la página */
 * {
     margin: 0;
     padding: 0;
@@ -8,43 +7,38 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #000000; /* Fondo totalmente negro para los laterales */
+    background-color: #000000;
     overflow-x: hidden;       
 }
 
-/* 2. Contenedor: Reducido al 60% de ancho y centrado */
 #layout-principal {
     display: grid;
-    width: 60%;    /* Reducido para que ocupe el 60% del ancho total */
-    height: 100vh; /* Sigue ocupando todo el alto de la pantalla de borde a borde */
-    margin: 0 auto; /* Centra el diseño en medio de la pantalla */
+    width: 60%;
+    height: 100vh;
+    margin: 0 auto;
     border-left: 4px solid #000000;
     border-right: 4px solid #000000;
     
-    /* Columnas: El menú lateral ocupa el 25% y el contenido el 75% del bloque */
+
     grid-template-columns: 25% 75%;
     
-    /* Filas: Header y Footer automáticos, el centro se estira */
     grid-template-rows: auto 1fr auto;
     
-    /* Mapa visual del diseño */
     grid-template-areas: 
         "header header"
         "aside main"
         "footer footer";
 }
 
-/* 3. Estilos generales para todos los bloques */
 .bloque {
     color: #000000;
     padding: 25px;
 }
 
-/* 4. Asignación de áreas, colores y bordes internos */
 
 .top-superior {
     grid-area: header;
-    background-color: #e63973; /* Rosa / Fucsia */
+    background-color: #e63973;
     font-size: 2.2rem;
     font-weight: bold;
     text-align: center;
@@ -53,25 +47,24 @@ html, body {
 
 .top-izquierdo {
     grid-area: aside;
-    background-color: #b5b382; /* Verde Oliva / Pardo */
+    background-color: #b5b382;
     border-right: 4px solid #000000;
 }
 
 .top-central {
     grid-area: main;
-    background-color: #e6af87; /* Naranja claro / Arena */
+    background-color: #e6af87;
     font-size: 1.3rem;
 }
 
 .top-interior {
     grid-area: footer;
-    background-color: #71a497; /* Verde azulado / Jade */
+    background-color: #71a497;
     font-weight: bold;
     text-align: center;
     border-top: 4px solid #000000;
 }
 
-/* 5. Estilos para los textos y enlaces dentro del Nav (Aside) */
 .texto-lateral {
     font-size: 1.6rem;
     font-weight: bold;
