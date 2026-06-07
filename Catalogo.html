@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopta un Amigo - Panel de Control</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; background-color: #f7f9fa; }
+        h1 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #ff7675; color: white; }
+        tr:hover { background-color: #f1f2f6; }
+        .error-state { color: #d63031; font-weight: bold; text-align: center; }
+        /* Un extra para que el estado se vea bonito */
+        .badge { padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+        .disponible { background-color: #55efc4; color: #00b894; }
+        .en-proceso { background-color: #ffeaa7; color: #fdcb6e; }
+    </style>
+</head>
+<body>
+
+    <h1>🐾 Perritos en Busca de un Hogar</h1>
+    <p>Lista actualizada de peluditos disponibles para adopción.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Especie</th>
+                <th>Edad</th>
+                <th>Tamaño</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <!-- El JS inyectará los perritos aquí -->
+        <tbody id="contenido">
+            <tr>
+                <td colspan="5">Buscando huellitas... Cargando...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
