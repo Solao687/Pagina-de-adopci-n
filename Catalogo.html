@@ -5,13 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopta un Amigo - Panel de Control</title>
     <style>
+        /* --- Estilos de la nueva barra superior --- */
+        .navbar {
+            background-color: #2c3e50; /* Color oscuro elegante */
+            margin: -30px -30px 30px -30px; /* Rompe el margen del body para pegarse a los bordes */
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between; /* Separa el título de los links */
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 20px; /* Espacio entre cada enlace */
+        }
+
+        .navbar-links a {
+            color: #b2bec3;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        /* Efecto al pasar el mouse por los links de la barra */
+        .navbar-links a:hover {
+            color: #ffffff; 
+        }
+
+        /* --- Estilos originales que ya tenías --- */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; background-color: #f7f9fa; }
-        h1 { color: #2c3e50; }
+        h1 { color: #2c3e50; margin-top: 20px; }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
         th { background-color: #ff7675; color: white; }
         tr:hover { background-color: #f1f2f6; }
         .error-state { color: #d63031; font-weight: bold; text-align: center; }
+        
         /* Un extra para que el estado se vea bonito */
         .badge { padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
         .disponible { background-color: #55efc4; color: #00b894; }
@@ -19,6 +57,16 @@
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">🐾 Refugio Huellitas</a>
+        <div class="navbar-links">
+            <a href="#">Inicio</a>
+            <a href="./Catalogo.html">Catálogo</a>
+            <a href="#">Cómo Adoptar</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
 
     <h1>🐾 Perritos en Busca de un Hogar</h1>
     <p>Lista actualizada de peluditos disponibles para adopción.</p>
@@ -33,7 +81,6 @@
                 <th>Estado</th>
             </tr>
         </thead>
-        <!-- El JS inyectará los perritos aquí -->
         <tbody id="contenido">
             <tr>
                 <td colspan="5">Buscando huellitas... Cargando...</td>
