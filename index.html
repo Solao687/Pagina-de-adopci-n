@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-  
 <head>
     <meta charset="utf-8">
-    <title> Adopcion de mascotas </title>
+    <title> Tercera Prueba - Inicio </title>
     <link rel="stylesheet" href="Estilos.css">
 </head>
 <body>
- <div id="layout-principal">
-    
-   <header class="bloque top-superior">
-     Pagina de adopcion
-   </header>
 
-   <aside class="bloque top-izquierdo">
-     
-    <p class="texto-lateral">Lista:</p>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">🐾 Refugio Huellitas</a>
+        <div class="navbar-links">
+            <a href="#">Inicio</a>
+            <a href="./Catalogo.html">Catálogo</a>
+            <a href="#">Cómo Adoptar</a>
+            <a href="#">Contacto</a>
+        </div>
+    </nav>
 
-    <ul class="lista-links">
-        <li><a href="./Catalogo.html">CATALOGO</a></li>
-        <li><a href="#">COMO ADOPTAR</a></li>
-        <li><a href="#">SOBRE NOSOTROS</a></li>
-        <li><a href="#">CONTACTO</a></li>
-    </ul>
-</aside>
+    <div id="layout-principal">
+        
+       <header class="bloque top-superior">
+         Adopcion de Mascotas
+       </header>
 
-    <main class="bloque top-central">
-    Bienvenido
-    </main> 
+       <aside class="bloque top-izquierdo">
+         <p class="texto-lateral">Lista:</p>
+         <ul class="lista-links">
+            <li><a href="./Catalogo.html">Catalogo</a></li>
+            <li><a href="#">Como adoptar</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+         </ul>
+       </aside>
 
-    <footer class="bloque top-interior">
-    Desarrollado por Juan Solano - 06/06/2026
-    </footer>
+        <main class="bloque top-central">
+            <h2>🐾 Perritos en Busca de un Hogar</h2>
+            <p>Somos una empresa sin fines de lucro.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Especie</th>
+                        <th>Edad</th>
+                        <th>Tamaño</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="contenido">
+                    <tr>
+                        <td colspan="5" class="cargando">Buscando huellitas... Cargando...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main> 
 
-</div>
+        <footer class="bloque top-interior">
+         Desarrollado por Juan Solano - 06/06/2026
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
